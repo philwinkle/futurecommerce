@@ -16,7 +16,7 @@ gulp.task('serve', ['sass'], function() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
   return gulp.src("src/scss/*.scss")
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
     .pipe(gulp.dest("src/css"))
     .pipe(browserSync.stream());
