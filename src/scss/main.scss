@@ -4,6 +4,12 @@
   }
 }
 
+$c-text: #333;
+$bg-page: white;
+$bg-description: lightcyan;
+$bg-episode-title: gainsboro;
+$bg-content: blanchedalmond;
+
 $medium: 40em;
 $large: 60em;
 $xlarge: 80em;
@@ -13,6 +19,8 @@ html {
   line-height: 1.5;
   font-family: "vista-sans", Verdana, sans-serif;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  color: $c-text;
+  background-color: $bg-page;
 
   @include bp($medium) {
     font-size: 18px;
@@ -63,7 +71,7 @@ a {
 .podcast-header {
   margin-bottom: 2.4rem;
   padding-left: 1.8rem;
-  padding-right: 1.8rem;
+  padding-right: 2.8rem;
 
   > .container {
     display: flex;
@@ -78,7 +86,7 @@ a {
   margin-top: 4.2rem;
   padding-left: 1.8rem;
   padding-right: 1.8rem;
-  background-color: blanchedalmond;
+  background-color: $bg-content;
 }
 
 .podcast-description {
@@ -89,7 +97,7 @@ a {
   margin-bottom: 6.4rem;
   padding: 2.4rem;
   padding-top: 0;
-  background-color: lightcyan;
+  background-color: $bg-description;
 
   &:before {
     content: '';
@@ -98,7 +106,7 @@ a {
     left: 0;
     width: 100%;
     height: 2.4rem;
-    background-color: lightcyan;
+    background-color: $bg-description;
   }
 
   p {
@@ -135,7 +143,7 @@ a {
     left: -1.8rem;
     height: 4.2rem;
     width: 100vw;
-    background-color: white;
+    background-color: $bg-page;
     content: '';
   }
 
@@ -146,7 +154,7 @@ a {
       left: -1.8rem;
       height: 4.2rem;
       width: 100vw;
-      background-color: white;
+      background-color: $bg-page;
       content: '';
     }
   }
@@ -160,7 +168,7 @@ a {
     left: -1.8rem;
     width: 100%;
     padding: 1.6rem;
-    background-color: gainsboro;
+    background-color: $bg-episode-title;
 
     @include bp($medium) {
       left: -6.4vw;
