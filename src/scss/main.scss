@@ -4,11 +4,16 @@
   }
 }
 
+$c-white: #f4f7ff;
+$c-manatee: #5e738c;
+$c-bazaar: #997976;
+$c-ebony-clay: #24313F;
+
 $c-text: #333;
-$bg-page: white;
-$bg-description: lightcyan;
-$bg-episode-title: gainsboro;
-$bg-content: blanchedalmond;
+$bg-page: $c-manatee;
+$bg-description: $c-bazaar;
+$bg-episode-title: $c-ebony-clay;
+$bg-content: $c-white;
 
 $medium: 40em;
 $large: 60em;
@@ -97,6 +102,7 @@ a {
   margin-bottom: 6.4rem;
   padding: 2.4rem;
   padding-top: 0;
+  color: $c-white;
   background-color: $bg-description;
 
   &:before {
@@ -116,6 +122,8 @@ a {
 
 // RSS, Twitter, etc.
 .podcast-nav {
+  color: $c-white;
+
   ul {
     display: flex;
     justify-content: flex-end;
@@ -168,6 +176,7 @@ a {
     left: -1.8rem;
     width: 100%;
     padding: 1.6rem;
+    color: $c-white;
     background-color: $bg-episode-title;
 
     @include bp($medium) {
@@ -178,15 +187,11 @@ a {
   &-title {
     margin-top: .4em;
     margin-bottom: 0;
-    font-family: "bungee", sans-serif;
+    font-size: 1.8rem;
     font-weight: 700;
-    line-height: 1.6;
-    text-transform: uppercase;
+    font-feature-settings: "smcp" 1;
+    line-height: 1.2;
     letter-spacing: 1px;
-
-    .wf-active & {
-      font-weight: 400;
-    }
   }
 
   &-player {
@@ -209,4 +214,9 @@ a {
     padding: 0;
     list-style-type: none;
   }
+}
+
+.podcast-footer {
+  color: $c-white;
+  background-color: $c-bazaar;
 }
