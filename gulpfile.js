@@ -22,4 +22,11 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task('build', function() {
+  return gulp.src("src/scss/*.scss")
+    .pipe(sass())
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(gulp.dest("src/css"))
+});
+
 gulp.task('default', ['serve']);
