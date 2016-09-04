@@ -30,7 +30,6 @@ html {
   font-family: "vista-sans", Verdana, sans-serif;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pnum" 0, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
   color: $c-text;
-  background-color: $bg-page;
 
   @include bp($medium) {
     font-size: 18px;
@@ -44,6 +43,7 @@ html {
 body {
   margin: 0;
   width: 100%;
+  background-color: $bg-page;
 }
 
 .container {
