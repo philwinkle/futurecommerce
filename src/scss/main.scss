@@ -39,8 +39,7 @@ html {
 
 body {
   max-width: 40em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   overflow-x: hidden;
 }
 
@@ -226,6 +225,46 @@ a {
 }
 
 .podcast-footer {
+  margin-left: -100vw;
+  margin-right: -100vw;
+  padding: 1rem 100vw;
+  font-size: .8rem;
+  text-align: center;
   color: $c-white;
   background-color: $c-bazaar;
+
+  .podcast-nav {
+    display: none;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.podcast-host-avatar {
+  display: inline-block;
+  border-bottom: 0;
+  width: 75px;
+}
+
+.podcast-host-name {
+  margin: 0;
+}
+
+.podcast-hosts > h2 {
+    font-feature-settings: "smcp" 1;
+}
+
+.podcast-simplecast-link {
+  display: block;
+
+  a {
+    &:hover,
+    &:focus {
+      border-bottom-color: currentColor;
+    }
+  }
+}
+
 }
