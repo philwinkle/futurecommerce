@@ -70,6 +70,10 @@ a {
   }
 }
 
+.podcast-image {
+  display: none;
+}
+
 // Logo
 .podcast-title {
   border-bottom: 0;
@@ -146,21 +150,28 @@ a {
 
 .podcast-episode {
   position: relative;
-  margin-bottom: 4.2rem;
   padding-bottom: 1.8rem;
+
+  // Only on home page
+  [id^="index"] & {
+    margin-bottom: 4.2rem;
+  }
 
   header {
     top: -2.4rem;
   }
 
   &:after {
-    position: absolute;
-    top: 100%;
-    left: -1.8rem;
-    height: 4.2rem;
-    width: 100vw;
-    background-color: $bg-page;
-    content: '';
+    // Only on home page
+    [id^="index"] & {
+      position: absolute;
+      top: 100%;
+      left: -1.8rem;
+      height: 4.2rem;
+      width: 100vw;
+      background-color: $bg-page;
+      content: '';
+    }
   }
 
   &-featured {
@@ -203,8 +214,7 @@ a {
   }
 
   &-player {
-    // Just for now, though I'll definitely forget to take this out.
-    display: none;
+    margin-bottom: 1.8rem;
   }
 
   &-description {
@@ -222,6 +232,10 @@ a {
     padding: 0;
     list-style-type: none;
   }
+}
+
+.podcast-page-navigation {
+  display: none;
 }
 
 .podcast-footer {
@@ -267,4 +281,206 @@ a {
   }
 }
 
+.fb_iframe_widget {
+  max-width: 600px;
+  padding: 10px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 3px;
+  margin: 0 auto;
+  display: block !important
+}
+
+#disqus_thread {
+  margin-bottom: 1.8rem;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+
+.simplecast-player {
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  color: #fff;
+  color: rgba(255,255,255,0.8)
+}
+
+.simplecast-player a {
+  outline: 0;
+  border-bottom: 0;
+}
+
+.simplecast-player .svg {
+  display: block
+}
+
+.simplecast-player .svg path {
+  fill: #fff !important
+}
+
+.jp-audio .jp-interface {
+  display: table;
+  height: 100%;
+  width: 100%
+}
+
+.jp-audio .jp-interface .jp-gui-item {
+  display: table-cell;
+  vertical-align: top;
+  height: 36px
+}
+
+.jp-audio .jp-interface .jp-play-controls {
+  width: 20px
+}
+
+.jp-audio .jp-interface .jp-play-controls a {
+  outline: 0;
+  display: block;
+  width: 20px;
+  height: 36px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  text-align: left
+}
+
+.jp-audio .jp-interface .jp-play-controls a.jp-play,.jp-audio .jp-interface .jp-play-controls a.jp-pause {
+  opacity: 0.8
+}
+
+.jp-audio .jp-interface .jp-play-controls a.jp-play img,.jp-audio .jp-interface .jp-play-controls a.jp-pause img {
+  display: none
+}
+
+.jp-audio .jp-interface .jp-play-controls a.jp-play svg,.jp-audio .jp-interface .jp-play-controls a.jp-pause svg {
+  margin-top: 7px;
+  height: 20px;
+  width: 20px
+}
+
+.jp-audio .jp-interface .jp-play-controls a.jp-play svg.svg,.jp-audio .jp-interface .jp-play-controls a.jp-pause svg.svg {
+  display: inline-block
+}
+
+.jp-audio .jp-interface .jp-play-controls a.jp-play:hover,.jp-audio .jp-interface .jp-play-controls a.jp-pause:hover {
+  opacity: 1
+}
+
+.jp-audio .jp-interface .jp-rewind {
+  width: 16px
+}
+
+.jp-audio .jp-interface .main-player-rewind {
+  margin-top: 13px;
+  margin-left: 12px;
+  display: block;
+  height: 12px;
+  width: 12px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  opacity: 0.8
+}
+
+.jp-audio .jp-interface .main-player-rewind:hover {
+  opacity: 1
+}
+
+.jp-audio .jp-interface .jp-volume-controls {
+  width: 17px;
+  padding-left: 2px
+}
+
+.jp-audio .jp-interface .jp-volume-controls a {
+  margin-top: 11px;
+  outline: 0;
+  display: block;
+  width: 17px;
+  height: 11px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  opacity: 0.8
+}
+
+.jp-audio .jp-interface .jp-volume-controls a:hover {
+  opacity: 1
+}
+
+.jp-audio .jp-interface .jp-volume-controls a.jp-mute,.jp-audio .jp-interface .jp-volume-controls a.jp-unmute {
+  text-align: left
+}
+
+.jp-audio .jp-interface .jp-volume-controls a.jp-mute img,.jp-audio .jp-interface .jp-volume-controls a.jp-unmute img {
+  display: none
+}
+
+.jp-audio .jp-interface .jp-volume-controls a.jp-mute svg,.jp-audio .jp-interface .jp-volume-controls a.jp-unmute svg {
+  height: 100%
+}
+
+.jp-audio .jp-interface .jp-time {
+  width: 60px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 14px
+}
+
+.jp-audio .jp-interface .jp-progress {
+  margin-top: 16px;
+  width: 100%;
+  height: 3px;
+  background: #ccc;
+  background: rgba(255,255,255,0.7)
+}
+
+.jp-audio .jp-interface .jp-progress .jp-seek-bar {
+  width: 100%;
+  height: 3px;
+  cursor: pointer
+}
+
+.jp-audio .jp-interface .jp-progress .jp-play-bar {
+  background: #fff;
+  height: 3px;
+  width: 0%
+}
+
+.jp-audio .jp-interface .jp-player-speed {
+  width: 34px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 32px;
+  cursor: pointer
+}
+
+.jp-audio .jp-interface .jp-player-speed:hover {
+  color: #fff
+}
+
+.mobile .jp-audio .jp-rewind,.mobile .jp-audio .jp-volume-controls,.mobile .jp-audio .jp-player-speed,.jp-audio.simplecast-player-simple .jp-rewind,.jp-audio.simplecast-player-simple .jp-volume-controls,.jp-audio.simplecast-player-simple .jp-player-speed {
+  display: none
+}
+
+.site-text-dark .svg path {
+  fill: $c-ebony-clay !important
+}
+
+.site-text-dark .jp-audio {
+  color: $c-ebony-clay;
+  color: rgba(0,0,0,0.7)
+}
+
+.site-text-dark .jp-audio .jp-interface .jp-progress {
+  background: #ccc;
+  background: rgba(0,0,0,0.5)
+}
+
+.site-text-dark .jp-audio .jp-interface .jp-progress .jp-play-bar {
+  background: $c-ebony-clay;
+}
+
+.site-text-dark .jp-audio .jp-interface .jp-player-speed:hover {
+  color: #111
+}
+
+#jplayer_inspector {
+  color: #111
 }
