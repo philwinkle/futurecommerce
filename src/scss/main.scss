@@ -20,6 +20,10 @@ $medium: 40em;
 $large: 60em;
 $xlarge: 80em;
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
   line-height: 1.5;
@@ -196,14 +200,15 @@ a {
 
   header {
     position: relative;
-    left: -1.8rem;
-    width: 100%;
+    left: 50%;
     padding: 1.6rem;
+    transform: translateX(-50%);
     color: $c-white;
     background-color: $bg-episode-title;
 
     @include bp($medium) {
       left: -6.4vw;
+      transform: initial;
     }
   }
 
