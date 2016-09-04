@@ -38,9 +38,13 @@ html {
 }
 
 body {
+  margin: 0;
+  width: 100%;
+}
+
+.container {
   max-width: 40em;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 img {
@@ -239,9 +243,7 @@ a {
 }
 
 .podcast-footer {
-  margin-left: -100vw;
-  margin-right: -100vw;
-  padding: 1rem 100vw;
+  padding: 1rem;
   font-size: .8rem;
   text-align: center;
   color: $c-white;
