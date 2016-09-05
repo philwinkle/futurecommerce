@@ -3,6 +3,7 @@ var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var csswring = require('csswring');
 
 gulp.task('serve', ['sass'], function() {
   browserSync.init({
@@ -17,7 +18,7 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('sass', function() {
   return gulp.src("src/scss/*.scss")
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }), csswring() ]))
     .pipe(gulp.dest("src/css"))
     .pipe(browserSync.stream());
 });
@@ -25,7 +26,7 @@ gulp.task('sass', function() {
 gulp.task('build', function() {
   return gulp.src("src/scss/*.scss")
     .pipe(sass())
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }), csswring() ]))
     .pipe(gulp.dest("src/css"))
 });
 
