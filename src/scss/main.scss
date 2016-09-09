@@ -5,15 +5,18 @@
 }
 
 $c-white: #f4f7ff;
-$c-manatee: #5e738c;
-$c-bazaar: #997976;
-$c-ebony-clay: #24313F;
-$c-polo-blue: #91B6D8;
+$c-magenta: #BA1CAD;
+$c-dark-magenta: #6D0665;
+$c-brown: #542F2E;
+$c-teal: #07877A;
+$c-dark-purp: darken(#3A0936, 5%);
 
-$c-text: $c-ebony-clay;
-$bg-page: $c-manatee;
-$bg-description: $c-bazaar;
-$bg-episode-title: $c-ebony-clay;
+$c-highlighter: #74E623;
+
+$c-text: $c-dark-purp;
+$bg-page: $c-brown;
+$bg-description: $c-magenta;
+$bg-episode-title: $c-magenta;
 $bg-content: $c-white;
 
 $medium: 40em;
@@ -59,14 +62,14 @@ img {
 a {
   color: currentColor;
   text-decoration: none;
-  border-bottom: 4px solid $c-polo-blue;
+  border-bottom: 4px solid $c-magenta;
   transition: color .25s ease-in-out;
   transition: border-bottom-color .25s ease-in-out;
 
   &:hover,
   &:focus {
     color: #222;
-    border-bottom-color: $c-bazaar;
+    border-bottom-color: $c-dark-magenta;
   }
 
   .podcast-episode-title & {
@@ -92,6 +95,10 @@ a {
       max-width: 600px;
     }
   }
+}
+
+h2 {
+  color: $c-teal;
 }
 
 .podcast-header {
@@ -221,6 +228,7 @@ a {
     font-feature-settings: "smcp" 1;
     line-height: 1.2;
     letter-spacing: 1px;
+    color: currentColor;
   }
 
   &-player {
@@ -253,7 +261,7 @@ a {
   font-size: .8rem;
   text-align: center;
   color: $c-white;
-  background-color: $c-bazaar;
+  background-color: $bg-description;
 
   .podcast-nav {
     display: none;
@@ -275,7 +283,8 @@ a {
 }
 
 .podcast-hosts > h2 {
-    font-feature-settings: "smcp" 1;
+  color: currentColor;
+  font-feature-settings: "smcp" 1;
 }
 
 .podcast-simplecast-link {
@@ -468,11 +477,11 @@ a {
 }
 
 .site-text-dark .svg path {
-  fill: $c-ebony-clay !important
+  fill: $c-text !important
 }
 
 .site-text-dark .jp-audio {
-  color: $c-ebony-clay;
+  color: $c-text;
   color: rgba(0,0,0,0.7)
 }
 
@@ -482,7 +491,7 @@ a {
 }
 
 .site-text-dark .jp-audio .jp-interface .jp-progress .jp-play-bar {
-  background: $c-ebony-clay;
+  background: $c-text;
 }
 
 .site-text-dark .jp-audio .jp-interface .jp-player-speed:hover {
