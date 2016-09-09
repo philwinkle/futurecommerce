@@ -4,17 +4,18 @@
   }
 }
 
-$c-white: #f4f7ff;
-$c-manatee: #5e738c;
-$c-bazaar: #997976;
-$c-ebony-clay: #24313F;
-$c-polo-blue: #91B6D8;
+$c-byzantine: #ba1cad;
+$c-rich-black: #080705;
+$c-white: #fff;
+$c-halaya-ube: #703d57;
+$c-sky: adjust-hue(#d4ebf2, 30%);
 
-$c-text: $c-ebony-clay;
-$bg-page: $c-manatee;
-$bg-description: $c-bazaar;
-$bg-episode-title: $c-ebony-clay;
+$c-text: $c-rich-black;
+$bg-page: $c-sky;
+$bg-description: $c-halaya-ube;
+$bg-episode-title: $c-halaya-ube;
 $bg-content: $c-white;
+$bg-footer: $c-white;
 
 $medium: 40em;
 $large: 60em;
@@ -59,17 +60,18 @@ img {
 a {
   color: currentColor;
   text-decoration: none;
-  border-bottom: 4px solid $c-polo-blue;
-  transition: color .25s ease-in-out;
+  border-bottom: 3px solid $c-halaya-ube;
+  transition: color .5s ease-in-out;
   transition: border-bottom-color .25s ease-in-out;
 
   &:hover,
   &:focus {
-    color: #222;
-    border-bottom-color: $c-bazaar;
+    color: $c-byzantine;
+    border-bottom-color: currentColor;
   }
 
   .podcast-episode-title & {
+    color: currentColor;
     border-bottom: 0;
 
     &:hover,
@@ -94,10 +96,16 @@ a {
   }
 }
 
+h2 {
+  // color: $c-teal;
+}
+
 .podcast-header {
-  margin-bottom: 2.4rem;
+  margin-bottom: 4.8rem;
   padding-left: 1.8rem;
   padding-right: 2.8rem;
+  padding-bottom: 1rem;
+  background-color: $bg-content;
 
   > .container {
     display: flex;
@@ -143,12 +151,13 @@ a {
 
 // RSS, Twitter, etc.
 .podcast-nav {
-  color: $c-white;
+  // color: $c-white;
 
   ul {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
+    margin-top: 0;
     list-style-type: none;
   }
 
@@ -221,6 +230,7 @@ a {
     font-feature-settings: "smcp" 1;
     line-height: 1.2;
     letter-spacing: 1px;
+    color: currentColor;
   }
 
   &-player {
@@ -252,8 +262,7 @@ a {
   padding: 1rem;
   font-size: .8rem;
   text-align: center;
-  color: $c-white;
-  background-color: $c-bazaar;
+  background-color: $bg-footer;
 
   .podcast-nav {
     display: none;
@@ -275,7 +284,8 @@ a {
 }
 
 .podcast-hosts > h2 {
-    font-feature-settings: "smcp" 1;
+  color: currentColor;
+  font-feature-settings: "smcp" 1;
 }
 
 .podcast-simplecast-link {
@@ -468,11 +478,11 @@ a {
 }
 
 .site-text-dark .svg path {
-  fill: $c-ebony-clay !important
+  fill: $c-text !important
 }
 
 .site-text-dark .jp-audio {
-  color: $c-ebony-clay;
+  color: $c-text;
   color: rgba(0,0,0,0.7)
 }
 
@@ -482,7 +492,7 @@ a {
 }
 
 .site-text-dark .jp-audio .jp-interface .jp-progress .jp-play-bar {
-  background: $c-ebony-clay;
+  background: $c-text;
 }
 
 .site-text-dark .jp-audio .jp-interface .jp-player-speed:hover {
