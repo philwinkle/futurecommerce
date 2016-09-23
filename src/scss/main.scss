@@ -211,6 +211,7 @@ h2 {
     width: 175px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.2rem;
     line-height: 0;
     border: 6px solid $c-gentler-magenta;
     transition: border-color .25s ease-in-out;
@@ -221,21 +222,29 @@ h2 {
     }
 
     @include bp($medium) {
-      margin-left: 0;
-      margin-right: 0;
+      margin: 0;
+    }
+  }
+
+  > article {
+    @include bp($medium) {
+      margin-top: -2rem;
     }
   }
 
   header {
     position: relative;
     left: 50%;
+    width: calc(100% + 3.6rem);
     padding: 1.6rem;
     transform: translateX(-50%);
     color: $c-white;
     background-color: $bg-episode-title;
 
     @include bp($medium) {
-      left: -6.4vw;
+      position: static;
+      margin-left: -1.8rem;
+      margin-bottom: 1.8rem;
       transform: initial;
     }
   }
@@ -257,6 +266,10 @@ h2 {
 
   &-description {
     margin-top: -1rem;
+
+    @include bp($medium) {
+      margin-top: 0;
+    }
 
     li {
       margin-bottom: .24em;
