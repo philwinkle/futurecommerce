@@ -547,11 +547,16 @@ h2 {
     background-color: #ba1dac;
     padding: .3em 1em 1.8em;
     color: #fff !important;
-    
-    .svg path {
+    z-index: 9999;
+
+    .jp-progress .jp-play-bar, .svg path {
       fill: #fff !important;
+      background-color: #fff !important;
     }
 
+    @media(max-width: $medium) {
+      padding-bottom: 2.3em;
+    }
 
   }
 }
