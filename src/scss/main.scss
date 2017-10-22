@@ -562,7 +562,6 @@ h2 {
 }
 
 .podcast-sponsors {
-
   margin-top: 1.6rem;
   margin-bottom: 4rem;
 
@@ -582,4 +581,51 @@ a.podcast-site-link {
   &:after {
     content: attr(data-hint);
   }
+}
+
+[id^="index"] #readmore {
+  display: block;
+  height: 3em;
+  cursor: pointer;
+  text-align: center;
+  color: $c-byzantine;
+  border: 2px solid $c-byzantine;
+  margin-bottom: 1rem;
+
+  &:after {
+    vertical-align: -50%;
+    content: '\00AB   Read Less';
+  }
+
+  &-state {
+    visibility: hidden;
+
+    &:checked {
+      & ~ .podcast-episode-description {
+        overflow: hidden;
+        max-height: 20em;
+        transition: max-height .5s ease-out;
+      }
+
+      & ~ #readmore:before {
+        content: '';
+        position: absolute;
+        background: linear-gradient(0deg, white, transparent);
+        z-index: 9999;
+        left: 0;
+        width: 100%;
+        height: 10em;
+        margin-top: -10.5rem;
+      }
+
+      & ~ #readmore:after {
+        content: '\00BB   Read More';
+      }
+    }
+  }
+}
+
+.podcast-episode-description {
+  max-height: 20000em;
+  transition: max-height .5s ease-out;
 }
