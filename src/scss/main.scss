@@ -146,19 +146,20 @@ h2 {
 
 .podcast-description {
   display: none;
-}
 
-#index-page .podcast-description {
-  display: block;
-  position: relative;
-  max-width: 30em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 8.4rem;
-  padding: 2.4rem;
-  padding-top: 0;
-  color: $c-white;
-  background-color: $bg-description;
+  // Only on home page
+  [id^="index"] & {
+    display: block;
+    position: relative;
+    max-width: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8.4rem;
+    padding: 2.4rem;
+    padding-top: 0;
+    color: $c-white;
+    background-color: $bg-description;
+  }
 }
 
 // RSS, Twitter, etc.
@@ -171,6 +172,10 @@ h2 {
     flex-wrap: wrap;
     margin-top: 0;
     list-style-type: none;
+  }
+
+  li:nth-child(2) {
+    display: none;
   }
 
   li + li {
@@ -205,7 +210,8 @@ h2 {
     }
   }
 
-  &-featured {
+  // Only on home page
+  [id^="index"] &-featured {
     &::before {
       position: absolute;
       bottom: 100%;
@@ -351,7 +357,7 @@ h2 {
   background: transparent;
   color: #fff;
   color: rgba(255,255,255,0.8);
-  zoom: 2;
+  // zoom: 2;
 }
 
 .simplecast-player a {
@@ -394,7 +400,7 @@ h2 {
 }
 
 .jp-audio .jp-interface .jp-play-controls a.jp-play,.jp-audio .jp-interface .jp-play-controls a.jp-pause {
-  opacity: 0.8
+  opacity: 1.0
 }
 
 .jp-audio .jp-interface .jp-play-controls a.jp-play img,.jp-audio .jp-interface .jp-play-controls a.jp-pause img {
@@ -427,7 +433,7 @@ h2 {
   width: 12px;
   background-color: transparent;
   background-repeat: no-repeat;
-  opacity: 0.8
+  opacity: 1.0
 }
 
 .jp-audio .jp-interface .main-player-rewind:hover {
@@ -447,7 +453,7 @@ h2 {
   height: 11px;
   background-color: transparent;
   background-repeat: no-repeat;
-  opacity: 0.8
+  opacity: 1.0
 }
 
 .jp-audio .jp-interface .jp-volume-controls a:hover {
@@ -535,8 +541,31 @@ h2 {
   color: #111
 }
 
-.podcast-sponsors {
+.jp-audio {
+  transition: all .2s ease-in-out;
 
+  &.jp-state-playing {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ba1dac;
+    padding: .3em 1em 1.8em;
+    color: #fff !important;
+    z-index: 9999;
+
+    .jp-progress .jp-play-bar, .svg path {
+      fill: #fff !important;
+      background-color: #fff !important;
+    }
+
+    @media(max-width: $medium) {
+      padding-bottom: 2.3em;
+    }
+
+  }
+}
+
+.podcast-sponsors {
   margin-top: 1.6rem;
   margin-bottom: 4rem;
 
@@ -555,5 +584,62 @@ h2 {
 a.podcast-site-link {
   &:after {
     content: attr(data-hint);
+  }
+}
+
+[id^="index"] #readmore {
+  display: block;
+  height: 3em;
+  cursor: pointer;
+  text-align: center;
+  color: $c-byzantine;
+  border: 2px solid $c-byzantine;
+  margin-bottom: 1rem;
+
+  &:after {
+    vertical-align: -50%;
+    content: '\00AB   Read Less';
+  }
+
+  &-state {
+    visibility: hidden;
+
+    &:checked {
+      & ~ .podcast-episode-description {
+        overflow: hidden;
+        max-height: 20em;
+        transition: max-height .5s ease-out;
+      }
+
+      & ~ #readmore:before {
+        content: '';
+        position: absolute;
+        background: linear-gradient(0deg, white, transparent);
+        left: 0;
+        width: 100%;
+        height: 10em;
+        margin-top: -10.25rem;
+      }
+
+      & ~ #readmore:after {
+        content: '\00BB   Read More';
+      }
+    }
+  }
+}
+
+.podcast-episode-description {
+  max-height: 20000em;
+  transition: max-height .5s ease-out;
+}
+
+.jp-controls {
+
+  & > a {
+    transform: scale(2);
+  }
+
+  & .jp-play {
+    margin-right: 1rem;
   }
 }
