@@ -632,3 +632,14 @@ a.podcast-site-link {
   max-height: 20000em;
   transition: max-height .5s ease-out;
 }
+
+.jp-controls {
+
+  & > a {
+    transform: scale(2);
+  }
+
+  & .jp-play {
+    margin-right: 1rem;
+  }
+}
