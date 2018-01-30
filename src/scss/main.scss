@@ -183,6 +183,10 @@ h2 {
   }
 }
 
+a.podcast-episode-image {
+  border-bottom: none;
+}
+
 .podcast-episode {
   position: relative;
   padding-bottom: 1.8rem;
@@ -231,7 +235,7 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     line-height: 0;
-    border: 6px solid $c-gentler-magenta;
+    // border: 6px solid $c-gentler-magenta;
     transition: border-color .25s ease-in-out;
 
     &:hover,
